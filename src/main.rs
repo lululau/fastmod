@@ -340,7 +340,7 @@ impl Fastmod {
                             // Avoid generating index of -1 when start
                             // == end == offset = 0 for a zero-length
                             // match.
-                            mat.end() + offset - if is_zero_length_match { 0 } else { 1 },
+                            mat.end() + offset + if is_zero_length_match { 1 } else { 0 },
                         );
                         let accepted = self.ask_about_patch(
                             path,
